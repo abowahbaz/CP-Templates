@@ -4,10 +4,9 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-class Mo
+template < typename T > class Mo
 {
     public:
-    using T = int;
     static constexpr int block_size = 350; // TODO
     struct Query
     {
