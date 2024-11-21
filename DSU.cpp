@@ -39,7 +39,6 @@ private:
 
 void Solve()
 {
-
 }
 
 int main()
