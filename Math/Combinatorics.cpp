@@ -12,9 +12,7 @@ struct Combinatorics
     public:
     Combinatorics(int n, int mod = 1e9 + 7) :MOD(mod)
     {
-        fact.resize(n + 1);
-        inv_fact.resize(n + 1);
-        inv.resize(n + 1);
+        fact = inv_fact = inv = vector < ll > (n+1);
         fact[0] = 1;
         for (int i = 1; i <= n; i++) {
             fact[i] = (fact[i - 1] * i) % MOD;
