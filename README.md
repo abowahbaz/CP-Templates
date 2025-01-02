@@ -1,10 +1,10 @@
 # CP Templates :dart:
 
-- This repository contains my implementations of various algorithms and data structures in C++ through my competitive programming journey. I have tried to keep the code as clean and readable as possible.\
+- This repository contains my implementations of various algorithms and data structures in C++ through my competitive programming journey. I have tried to keep the code as clean and readable as possible.
 
 - Every code has some TODOs for problem specific implementation, make sure to read them before using the code.
 
-- This repository is not meant to be a replacement for learning the concepts from scratch. It is recommended to understand the concepts first and then refer to the code for implementation.\
+- This repository is not meant to be a replacement for learning the concepts from scratch. It is recommended to understand the concepts first and then refer to the code for implementation.
 - It's also recommended when practicing problems to implement the algorithms from scratch to get a better understanding of the concepts and to cope with the time constraints like in contests.
 
 ## Table of Contents :bookmark_tabs:
@@ -63,4 +63,4 @@
 
 - If you like this repository, show your support by giving a star :star:.
 
-## Made with :heart: by [Abo_WahbaZ](https://github.com/abowahbaz)
+## By [Abo_WahbaZ](https://github.com/abowahbaz)
