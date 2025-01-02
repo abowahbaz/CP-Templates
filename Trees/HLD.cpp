@@ -1,9 +1,6 @@
-// embrace the struggle
 #include <bits/stdc++.h>
-
 using namespace std;
 using ll = long long;
-
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
@@ -17,7 +14,7 @@ class HLD {
     void init(int u, int p = -1, int d = 0)
     {
         dep[u] = d, par[u] = p, SubtreeSz[u] = 1;
-        for (auto &v: adj[u]) {
+        for (auto &v : adj[u]) {
             if (v == p) continue;
             init(v, u, d + 1);
             SubtreeSz[u] += SubtreeSz[v];
@@ -31,7 +28,7 @@ class HLD {
         root[u] = newChain ? u : root[par[u]];
         pos[u] = nxt_pos++;
         if (heavy[u]) build(heavy[u], false);
-        for (auto &v: adj[u]) {
+        for (auto &v : adj[u]) {
             if (v == par[u] || v == heavy[u]) continue;
             build(v, true);
         }
@@ -43,9 +40,9 @@ class HLD {
             swap(u, v);
     }
 
-    pair<int,int> move_up(int &u)
+    pair<int, int> move_up(int &u)
     {
-        pair<int,int> ret = {pos[root[u]], pos[u]};
+        pair<int, int> ret = { pos[root[u]], pos[u] };
         u = par[root[u]];
         return ret;
     }
@@ -59,18 +56,18 @@ class HLD {
         build(treeRoot);
     }
 
-    vector<pair<int,int> > query_path(int u, int v)
+    vector<pair<int, int> > query_path(int u, int v)
     {
-        vector<pair<int,int> > ret;
+        vector<pair<int, int> > ret;
         while (root[u] != root[v]) {
             make_u_lower(u, v);
             ret.push_back(move_up(u));
         }
         make_u_lower(u, v);
         if (!VAL_ON_EDGE)
-            ret.push_back({pos[v], pos[u]});
+            ret.push_back({ pos[v], pos[u] });
         else if (u != v)
-            ret.push_back({pos[v] + 1, pos[u]});
+            ret.push_back({ pos[v] + 1, pos[u] });
         return ret;
     }
 

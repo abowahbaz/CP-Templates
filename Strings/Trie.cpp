@@ -10,7 +10,7 @@ class Trie
     constexpr static int S = 26, base = 'a'; // Edit this for different character set
     struct Node
     {
-        Node* child[S];
+        Node *child[S];
         bool isEnd;
         Node()
         {
@@ -21,9 +21,9 @@ class Trie
     };
     // Some helper functions
     int get(char c) { return c - base; }
-    bool check(Node* cur, int idx) { return !cur->child[idx]; }
+    bool check(Node *cur, int idx) { return !cur->child[idx]; }
 
-    Node* root;
+    Node *root;
     public:
     Trie()
     {
@@ -31,7 +31,7 @@ class Trie
     }
     void insert(string s)
     {
-        Node* cur = root;
+        Node *cur = root;
         for (char c : s)
         {
             int idx = get(c);
@@ -43,7 +43,7 @@ class Trie
     }
     bool search(string s)
     {
-        Node* cur = root;
+        Node *cur = root;
         for (char c : s)
         {
             int idx = get(c);
@@ -55,7 +55,7 @@ class Trie
     }
     bool isPrefix(string s)
     {
-        Node* cur = root;
+        Node *cur = root;
         for (char c : s)
         {
             int idx = get(c);
@@ -69,7 +69,7 @@ class Trie
     {
         if (!search(s))
             return;
-        Node* cur = root;
+        Node *cur = root;
         for (char c : s)
         {
             int idx = get(c);
@@ -81,7 +81,7 @@ class Trie
     }
 };
 
-void solve()
+void Solve()
 {
 
 }
@@ -92,12 +92,12 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    ios::sync_with_stdio(false);
+    ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;
     //cin >> t;
     for (int tc = 1; tc <= t; tc++) {
-        solve();
+        Solve();
         cout << "\n";
     }
     return 0;

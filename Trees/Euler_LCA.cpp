@@ -61,7 +61,7 @@ struct Euler_LCA // 1 based indexing
             bin_log[i] = bin_log[i >> 1] + 1;
     }
     // LCA of u and v in O(1)
-    int LCA(int u, int v)
+    int get_lca(int u, int v)
     {
         int l = first[u], r = first[v];
         if (l > r) swap(l, r);

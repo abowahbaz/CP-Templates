@@ -6,20 +6,20 @@ using ll = long long;
 
 class DSU
 {
-public:
+	public:
 	DSU(int n) : sets(n)
 	{
 		parent = gsize = vector < int >(n + 1, 0);
 		for (int i = 1; i <= n; i++)
 			parent[i] = i;
 	}
-	int Find(int u)
+	int get_parent(int u)
 	{
-		return parent[u] == u ? u : parent[u] = Find(parent[u]);
+		return parent[u] == u ? u : parent[u] = get_parent(parent[u]);
 	}
-	void Union(int u, int v)
+	void join(int u, int v)
 	{
-		u = Find(u), v = Find(v);
+		u = get_parent(u), v = get_parent(v);
 		if (u == v) return;
 		if (gsize[u] < gsize[v]) swap(u, v);
 		parent[v] = u;
@@ -30,7 +30,7 @@ public:
 	{
 		return sets;
 	}
-private:
+	private:
 	vector < int > parent, gsize;
 	int sets;
 
