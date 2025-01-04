@@ -8,7 +8,7 @@ template < typename T > class Sparse_Table
 {
 private:
 	const int LOG = 32;
-    int k;
+	int k;
 	typedef vector < T > vt;
 	vector < vt > table;
 
