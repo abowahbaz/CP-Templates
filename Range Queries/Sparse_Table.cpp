@@ -37,13 +37,13 @@ public:
 		}
 	}
 
-	T query(int l, int r) // ! should be same base as the array
+	T query(int L, int R) // ! should be same base as the array
 	{
 		T ret = none;
 		for (int i = k;i >= 0;i--)
-			if ((1 << i) <= r - l + 1) {
-				ret = merge(table[i][l], ret);
-				l += 1 << i;
+			if ((1 << i) <= R - L + 1) {
+				ret = merge(table[i][L], ret);
+				L += 1 << i;
 			}
 		return ret;
 	}
