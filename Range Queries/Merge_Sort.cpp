@@ -49,16 +49,16 @@ class Merge_Sort_Tree {
         sort(all(b[idx / len]));
     }
 
-    int query(int l, int r, T x)
+    int query(int L, int R, T x)
     {
         int res = 0;
-        while (l <= r) {
-            if (l % len == 0 && l + len - 1 <= r) {
-                res += get(l, x, 1);
-                l += len;
+        while (L <= R) {
+            if (L % len == 0 && L + len - 1 <= R) {
+                res += get(L, x, 1);
+                L += len;
             }
             else {
-                res += get(l++, x);
+                res += get(L++, x);
             }
         }
         return res;
