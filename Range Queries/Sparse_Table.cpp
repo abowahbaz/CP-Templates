@@ -7,7 +7,8 @@ using ll = long long;
 template < typename T > class Sparse_Table
 {
 private:
-	int max_size = 32, k;
+	const int LOG = 32;
+    int k;
 	typedef vector < T > vt;
 	vector < vt > table;
 
@@ -21,7 +22,7 @@ public:
 	Sparse_Table(const vt values)
 	{
 		int n = values.size();
-		k = max_size - __builtin_clz(n);
+		k = LOG - __builtin_clz(n);
 		table.resize(k, vt(n));
 		for (int i = 0; i < n; i++)
 			table[0][i] = values[i];
@@ -55,10 +56,6 @@ void Solve()
 
 signed main()
 {
-#if LOCAL
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int t = 1;

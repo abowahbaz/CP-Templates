@@ -7,7 +7,7 @@ using ll = long long;
 class Trie
 {
     private:
-    constexpr static int S = 26, base = 'a'; // Edit this for different character set
+    constexpr static int S = 26, base = 'a'; // TODO
     struct Node
     {
         Node *child[S];
@@ -86,12 +86,8 @@ void Solve()
 
 }
 
-int main()
+signed main()
 {
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;

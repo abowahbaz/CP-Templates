@@ -17,7 +17,7 @@ ll bin_pow(ll x, ll n)
     return res;
 }
 
-ll bin_pow_mod(ll x, ll n, ll mod)
+ll pow_mod(ll x, ll n, ll mod)
 {
     ll res = 1;
     while (n)
@@ -32,7 +32,7 @@ ll bin_pow_mod(ll x, ll n, ll mod)
 
 ll mod_inv(ll x, ll mod)
 {
-    return bin_pow_mod(x, mod - 2, mod);
+    return pow_mod(x, mod - 2, mod);
 }
 
 vector<int>apply_permutation(vector<int> &a, vector<int> &p)
@@ -66,10 +66,6 @@ void Solve()
 
 signed main()
 {
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;

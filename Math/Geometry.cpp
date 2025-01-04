@@ -39,10 +39,10 @@ namespace geometry
     bool is_collinear(point a, point b, point c) {
         return dblcmp(cross(b - a, c - a), 0) == 0;
     }
-    bool is_on_ray(point a, point b, point c) {
+    bool is_on_ray(point a, point b, point c) { // check if c on ray ab
         return dblcmp(dot(b - a, c - a), 0) == 1;
     }
-    bool is_on_segment(point a, point b, point c) {
+    bool is_on_segment(point a, point b, point c) { // check if c on segment ab
         return dblcmp(abs(a - c) + abs(b - c), abs(a - b)) == 0;
     }
     bool vector_intersect(point vec1, point vec2)
@@ -50,14 +50,14 @@ namespace geometry
         return !dblcmp(cross(vec1, vec2), 0);
     }
     // * Lines 	
-    bool is_parallel(point a, point b, point c, point d)
+    bool line_parallel(point a, point b, point c, point d) // ab || cd
     {
         return dblcmp(cross(b - a, d - c), 0) == 0;
     }
 
-    bool line_intersect(point a, point b, point c, point d)
+    bool line_intersect(point a, point b, point c, point d) // ab ∩ cd
     {
-        if (is_parallel(a, b, c, d)) return false;
+        if (line_parallel(a, b, c, d)) return false;
         double a1 = cross(d - c, a - c);
         double a2 = cross(d - c, b - c);
         if ((a1 > 0 && a2 > 0) || (a1 < 0 && a2 < 0)) return false;
@@ -67,17 +67,17 @@ namespace geometry
         return true;
     }
 
-    bool is_perpendicular(point a, point b, point c, point d)
+    bool line_perpendicular(point a, point b, point c, point d) // if ab ⊥ cd
     {
         return dblcmp(dot(b - a, d - c), 0) == 0;
     }
 
-    bool is_coincide(point a, point b, point c, point d) {
-        return is_parallel(a, b, c, d) && is_parallel(a, c, a, d);
+    bool line_coincide(point a, point b, point c, point d) {
+        return line_parallel(a, b, c, d) && line_parallel(a, c, a, d);
     }
 
     point get_intersection(point a, point b, point c, point d) {
-        if (is_parallel(a, b, c, d)) return point(nan(""), nan(""));
+        if (line_parallel(a, b, c, d)) return point(nan(""), nan(""));
         double a1 = cross(d - c, a - c);
         double a2 = cross(d - c, b - c);
         return (a1 * b - a2 * a) / (a1 - a2);

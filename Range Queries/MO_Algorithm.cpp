@@ -7,7 +7,8 @@ using ll = long long;
 template < typename T > struct Mo
 {
 	public:
-	static constexpr int block_size = 450; // suitable for at most 2x10^5
+	static const int MAX_N = 2e5 + 5; // TODO
+	static const int block_size = sqrt(MAX_N);
 	struct Query
 	{
 		int l, r, idx;
@@ -80,13 +81,9 @@ void Solve()
 
 }
 
-int main()
+signed main()
 {
-#if LOCAL
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-	ios::sync_with_stdio(false);
+	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 	int t = 1;
 	//cin >> t;
@@ -94,6 +91,5 @@ int main()
 		Solve();
 		cout << "\n";
 	}
-	cerr << clock() * 1.0 / CLOCKS_PER_SEC << "\n";
 	return 0;
 }

@@ -16,11 +16,12 @@ class Merge_Sort_Tree {
     // 1-Based
     private:
     int n;
-    const int len = 720; // suitable for n <= 5e5
+    static const int MAX_N = 2e5 + 5; // TODO
+    static const int len = sqrt(MAX_N);
     vector<T> a;
     vector<vector<T>> b;
     inline int blk_idx(int idx) { return idx / len; }
-    inline int get(int idx, T val, bool is_block = 0)
+    inline int get(int idx, T val, bool is_block = 0) // TODO
     {
         if (is_block) {
             idx = blk_idx(idx);

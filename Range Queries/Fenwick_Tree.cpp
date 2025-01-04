@@ -20,8 +20,7 @@ template<typename T> class Fenwick_Tree
     void assign(int idx, T val)
     {
         T prev_val = query(idx, idx);
-        T diff = val - prev_val;
-        add(idx, diff);
+        add(idx,val - prev_val);
     }
     void add(int idx, T val)
     {
@@ -50,10 +49,6 @@ void Solve()
 
 signed main()
 {
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;

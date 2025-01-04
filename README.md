@@ -18,7 +18,9 @@
 - [Combinatorial Library](Math/Combinatorics.cpp)
 - [Geometry Library](Math/Geometry.cpp)
 
-### Range Queries :bow_and_arrow:
+---
+
+### Range Queries :mag_right:
 
 - [Sparse Table](Range%20Queries/Sparse_Table.cpp)
 - [Iterative Segment Tree](Range%20Queries/Iterative_Seg_Tree.cpp)
@@ -29,12 +31,16 @@
 - [Square Root Decomposition](Range%20Queries/Sqrt_Decomposition.cpp)
 - [Merge Sort Tree](Range%20Queries/Merge_Sort.cpp)
 
+---
+
 ### Trees :deciduous_tree:
 
 - [Binary Lifting](Trees/LCA.cpp)
 - [Heavy Light Decomposition](Trees/HLD.cpp)
 - [Kruskal's MST](Trees/Kruskal_MST.cpp)
 - [Eulerian Path Method -- LCA in O(1)](Trees/Euler_LCA.cpp)
+
+---
 
 ### Graphs :chart_with_upwards_trend:
 
@@ -45,9 +51,17 @@
 - [Topological Sort](Graphs/Topological%20Sort.cpp)
 - [Bipartite Check](Graphs/Bipartite%20Check.cpp)
 
+---
+
 ### Strings :abc: (currently studying:sweat_smile:)
 
 - [Trie](Strings/Trie.cpp)
+
+---
+
+## Others 
+- [Monotonic Queue](Others/Monotonic_Queue.cpp)
+- [Coordinate Compression](Others/Coordinate_Compression.cpp)
 
 ## References and Resources used :books:
 
@@ -57,7 +71,7 @@
 - [Arabic Competitive Programming](https://www.youtube.com/@ArabicCompetitiveProgramming)
 - [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
 
-## Contributing :handshake:
+## Contributing :construction_worker:
 
 - Feel free to contribute to this repository by adding new algorithms, improving the existing ones, or fixing any issues.
 

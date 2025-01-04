@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 using ll = long long;
-
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
@@ -14,7 +12,8 @@ using ll = long long;
 
 struct Sqrt_Decomposition {
     private:
-    const int len = 450; // suitable for at most 2x10^5
+    static const int MAX_N = 2e5 + 5; // TODO
+    static const int len = sqrt(MAX_N);
     vector<ll> blk, arr;
     int blk_idx(int idx) { return idx / len; }
 
@@ -50,7 +49,6 @@ struct Sqrt_Decomposition {
                 L++;
             }
         }
-
         return ans;
     }
 };
