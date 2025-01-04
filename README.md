@@ -59,7 +59,8 @@
 
 ---
 
-## Others 
+## Others :bulb:
+
 - [Monotonic Queue](Others/Monotonic_Queue.cpp)
 - [Coordinate Compression](Others/Coordinate_Compression.cpp)
 
