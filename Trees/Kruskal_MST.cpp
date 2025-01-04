@@ -68,10 +68,6 @@ void Solve()
 
 signed main()
 {
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     int t = 1;
