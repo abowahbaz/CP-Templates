@@ -37,16 +37,17 @@ class Merge_Sort_Tree {
         b = vector<vector<T>>(len + 5);
 
         for (int i = 1; i <= n; i++)
-            b[i / len].push_back(a[i]);
+            b[blk_idx(i)].push_back(a[i]);
         for (int i = 0; i <= len; i++)
             sort(all(b[i]));
     }
 
     void update(int idx, T val)
     {
-        int j = lower_bound(all(b[idx / len]), a[idx]) - b[idx / len].begin();
-        b[idx / len][j] = a[idx] = val;
-        sort(all(b[idx / len]));
+        int k = blk_idx(idx);
+        int j = lower_bound(all(b[k]), a[idx]) - b[k].begin();
+        b[k][j] = a[idx] = val;
+        sort(all(b[k]));
     }
 
     int query(int L, int R, T x)
