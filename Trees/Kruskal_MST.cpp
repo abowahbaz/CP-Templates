@@ -8,6 +8,10 @@ using ll = long long;
 struct Edge
 {
     int id, u, v; ll w; // [edge_index,to,from,cost]
+    Edge(){}
+    Edge(int Id,int U,int V,ll W){
+        this->id = Id,this->u = U , this->v = V , this->w = W;
+    }
     bool operator < (const Edge &e) const
     {
         return w < e.w;
