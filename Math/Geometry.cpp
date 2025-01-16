@@ -107,7 +107,7 @@ namespace geometry
         return 0; // undefined case (collinear)
     }
 
-    double dist_to_line(point p, point a, point b, point &c)
+    double dist_to_line(point p, point a, point b, point &c) // 4th parameter is the closest point
     {
         point ap = p - a, ab = b - a;
         double u = dot(ap, ab) / norm(ab);
