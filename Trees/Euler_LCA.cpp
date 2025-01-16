@@ -10,11 +10,9 @@ struct Euler_LCA // 1 based indexing
 {
     private:
     int LOG;
-
-    using vi = vector < int >;
-    vi euler, first, depth, bin_log;
-    const vector < vi > adj;
-    vector < vi > dp;
+    vector < int > euler, first, depth, bin_log;
+    const vector < vector < int > > adj;
+    vector < vector < int > > dp;
 
     inline int get_min(int u, int v)
     {
@@ -34,12 +32,12 @@ struct Euler_LCA // 1 based indexing
             euler.emplace_back(u);
         }
     }
-    Euler_LCA(int n, vector < vi > &g) : adj(g)
+    Euler_LCA(int n, vector < vector < int > > &g) : adj(g)
     {
-        first = depth = vi(n + 1, -1);
+        first = depth = vector < int >(n + 1, -1);
         dfs(1, 0, 0);
         LOG = sz(euler) + 1;
-        dp.resize(LOG, vi(int(log2(LOG)) + 1));
+        dp.resize(LOG, vector < int >(int(log2(LOG)) + 1));
 
         // Precompute Sparse Table
         for (int i = 0;i < LOG;i++)
