@@ -17,7 +17,7 @@ class Merge_Sort_Tree {
     private:
     int n;
     static const int MAX_N = 2e5 + 5; // TODO
-    static const int len = sqrt(MAX_N);
+    static const int len = 450; // TODO
     vector<T> a;
     vector<vector<T>> b;
     inline int blk_idx(int idx) { return idx / len; }

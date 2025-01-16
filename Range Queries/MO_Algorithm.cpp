@@ -8,7 +8,7 @@ template < typename T > struct Mo
 {
 	public:
 	static const int MAX_N = 2e5 + 5; // TODO
-	static const int block_size = sqrt(MAX_N);
+	static const int block_size = 450; // TODO 
 	struct Query
 	{
 		int l, r, idx;
