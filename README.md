@@ -17,7 +17,6 @@
 - [Extended Euclidean Algorithm / LDE](Math/Extended_Euclidean.cpp)
 - [Combinatorial Library](Math/Combinatorics.cpp)
 - [Geometry Library](Math/Geometry.cpp)
-  v
 
 ---
 
