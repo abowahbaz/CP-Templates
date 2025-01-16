@@ -6,11 +6,10 @@ using ll = long long;
 
 template < typename T > class Sparse_Table
 {
-private:
+	private:
 	const int LOG = 32;
 	int k;
-	typedef vector < T > vt;
-	vector < vt > table;
+	vector < vector < T > > table;
 
 	const T none = 0; 				// TODO
 	T merge(T a, T b)
@@ -18,12 +17,12 @@ private:
 		return (a + b); 			// TODO
 	}
 
-public:
-	Sparse_Table(const vt values)
+	public:
+	Sparse_Table(const vector < T > values)
 	{
 		int n = values.size();
 		k = LOG - __builtin_clz(n);
-		table.resize(k, vt(n));
+		table.resize(k, vector < T >(n));
 		for (int i = 0; i < n; i++)
 			table[0][i] = values[i];
 
