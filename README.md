@@ -2,7 +2,7 @@
 
 - This repository contains my implementations of various algorithms and data structures in C++ through my competitive programming journey. I have tried to keep the code as clean and readable as possible.
 
-- Every code has some TODOs for problem specific implementation, make sure to read them before using the code.
+- Every code has some TODOs for problem specific implementation (advisably use `Better Comments`), make sure to read them before using the code.
 
 - This repository is not meant to be a replacement for learning the concepts from scratch. It is recommended to understand the concepts first and then refer to the code for implementation.
 - It's also recommended when practicing problems to implement the algorithms from scratch to get a better understanding of the concepts and to cope with the time constraints like in contests.
@@ -17,6 +17,7 @@
 - [Extended Euclidean Algorithm / LDE](Math/Extended_Euclidean.cpp)
 - [Combinatorial Library](Math/Combinatorics.cpp)
 - [Geometry Library](Math/Geometry.cpp)
+  v
 
 ---
 
@@ -25,7 +26,7 @@
 - [Sparse Table](Range%20Queries/Sparse_Table.cpp)
 - [Iterative Segment Tree](Range%20Queries/Iterative_Seg_Tree.cpp)
 - [Recursive Segment Tree](Range%20Queries/Seg_Tree.cpp)
-- [Lazy Propagation](Range%20Queries/Lazy%20Propagation.cpp)
+- [Lazy Propagation](Range%20Queries/Lazy_Seg_Tree.cpp)
 - [Fenwick Tree](Range%20Queries/Fenwick%20Tree.cpp)
 - [Mo's Algorithm](Range%20Queries/MO_Algorithm.cpp)
 - [Square Root Decomposition](Range%20Queries/Sqrt_Decomposition.cpp)
@@ -49,7 +50,6 @@
 - [Bellman Ford Algorithm](Graphs/Bellman%20Ford%20Algorithm.cpp)
 - [Floyd Warshall Algorithm](Graphs/Floyd%20Warshall%20Algorithm.cpp)
 - [Topological Sort](Graphs/Topological%20Sort.cpp)
-- [Bipartite Check](Graphs/Bipartite%20Check.cpp)
 
 ---
 
@@ -71,6 +71,7 @@
 - [USACO Guide](https://usaco.guide/)
 - [Arabic Competitive Programming](https://www.youtube.com/@ArabicCompetitiveProgramming)
 - [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
+- [Competitive Programming 4](https://cpbook.net/)
 
 ## Contributing :construction_worker:
 
