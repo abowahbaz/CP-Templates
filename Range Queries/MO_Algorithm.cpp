@@ -21,7 +21,7 @@ template < typename T > struct Mo
 		Query(int l, int r, int idx) : l(l), r(r), idx(idx) {}
 		Query() {};
 	};
-	void Set_Query(int l, int r, int idx)
+	void set_query(int l, int r, int idx)
 	{
 		queries[idx] = Query(l, r, idx);
 	}
@@ -33,20 +33,20 @@ template < typename T > struct Mo
 		nums = arr;
 
 	}
-	void Process()
+	void process()
 	{
 		sort(queries.begin(), queries.end());
 		for (Query &q : queries)
 		{
 			while (L > q.l)
-				Add(--L);
+				add(--L);
 			while (R < q.r)
-				Add(++R);
+				add(++R);
 			while (L < q.l)
-				Remove(L++);
+				remove(L++);
 			while (R > q.r)
-				Remove(R--);
-			answers[q.idx] = Get_Answer();
+				remove(R--);
+			answers[q.idx] = calc_answer();
 		}
 
 	}
@@ -54,19 +54,19 @@ template < typename T > struct Mo
 
 	private:
 	int L = 1, R = 0;
-	T answer = 0; // TODO
+	T answer = 0;					 // TODO
 	vector < T > nums;
-	void Add(int idx) // TODO
+	void add(int idx)				 // TODO
 	{
 
 	}
 
-	void Remove(int idx) // TODO
+	void remove(int idx) 			// TODO
 	{
 
 	}
 
-	T Get_Answer() // TODO
+	T calc_answer() // TODO
 	{
 		return answer;
 	}
