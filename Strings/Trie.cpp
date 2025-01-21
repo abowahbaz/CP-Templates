@@ -25,10 +25,7 @@ class Trie
 
     Node *root;
     public:
-    Trie()
-    {
-        root = new Node();
-    }
+    Trie(){root = new Node();}
     void insert(string s)
     {
         Node *cur = root;
