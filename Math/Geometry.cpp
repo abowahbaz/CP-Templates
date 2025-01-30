@@ -9,7 +9,7 @@ namespace geometry
     // ! Angles are in radians
     const double EPS = 1E-12, PI = acos(-1.0);
     typedef complex<double> point;
-    // * points ,lines and vectors are represented by complex numbers
+    // * points ,lines and vectors are represented as complex numbers
 #define X real()
 #define Y imag()
 
