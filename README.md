@@ -2,7 +2,7 @@
 
 - This repository contains my implementations of various algorithms and data structures in C++ through my competitive programming journey. I have tried to keep the code as clean and readable as possible.
 
-- Every code has some TODOs for problem specific implementation (advisably use `Better Comments`), make sure to read them before using the code.
+- Every code has some TODOs for problem specific implementation (advisably use [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) ), make sure to read them before using the code.
 
 - This repository is not meant to be a replacement for learning the concepts from scratch. It is recommended to understand the concepts first and then refer to the code for implementation.
 - It's also recommended when practicing problems to implement the algorithms from scratch to get a better understanding of the concepts and to cope with the time constraints like in contests.
@@ -11,7 +11,7 @@
 
 ### Math and Geometry :triangular_ruler:
 
-- [Exponentation / Mod Inverse ](Math/Exponentiation.cpp)
+- [Exponentation / Modular Multiplicative Inverse ](Math/Exponentiation.cpp)
 - [Sieve / Factorizations](Math/Sieve.cpp)
 - [Euler's Phi Function](Math/Phi.cpp)
 - [Extended Euclidean Algorithm / LDE](Math/Extended_Euclidean.cpp)
@@ -47,8 +47,9 @@
 - [Disjoint Set Union (DSU)](Graphs/DSU.cpp)
 - [Dijkstra's Algorithm](Graphs/Dijkstra's%20Algorithm.cpp)
 - [Bellman Ford Algorithm](Graphs/Bellman%20Ford%20Algorithm.cpp)
-- [Floyd Warshall Algorithm](Graphs/Floyd%20Warshall%20Algorithm.cpp)
+- [Floyd Warshall Algorithm](Graphs/Floyd.cpp)
 - [Topological Sort](Graphs/Topological%20Sort.cpp)
+- [Tarjan's Algorithm For SCC](Graphs/TarjanSCC.cpp)
 
 ---
 
