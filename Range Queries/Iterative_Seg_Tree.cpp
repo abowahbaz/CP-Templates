@@ -4,7 +4,7 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-template < typename T > class Segment_Tree
+template < typename T > class SegTree
 {
 	public:
 	struct Node
@@ -12,8 +12,8 @@ template < typename T > class Segment_Tree
 		T val;
 		Node(T v = 0) : val(v) {}
 	};
-	Segment_Tree(int N) { init(N); }
-	Segment_Tree(const vector < T > &a) { init(a.size()); Build(a); }
+	SegTree(int N) { init(N); }
+	SegTree(const vector < T > &a) { init(a.size()); Build(a); }
 	void update(int idx, T val)
 	{
 		idx += n;
