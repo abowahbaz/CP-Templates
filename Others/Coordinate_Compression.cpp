@@ -4,7 +4,8 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-vector <int> compress(const vector<T> arr) // compress [int,long long,string]
+template<class T>
+vector <int> compress(const vector<T> arr) // compress [int,long long,string] to [1,n]
 {
     vector<T> temp = arr;
     sort(temp.begin(), temp.end());
