@@ -45,8 +45,7 @@ vector < ll > prime_factors(ll n)
             cnt++;
             n /= i;
         }
-        if(cnt)
-            factors.push_back(i);
+        if (cnt)  factors.push_back(i);
     }
     if (n > 1) {
         factors.push_back(n);
