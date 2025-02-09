@@ -23,15 +23,17 @@ template < typename T > class Segment_Tree
 			tree[idx] = merge(tree[idx * 2], tree[(idx * 2) | 1]);
 		}
 	}
-	Node update(int l, int r)
+	T query(int l, int r)
 	{
 		Node res;
-		for (l += n, r += n; l <= r; l /= 2, r /= 2)
+		while (l <= r)
 		{
 			if (l & 1) res = merge(res, tree[l++]);
 			if (!(r & 1)) res = merge(res, tree[r--]);
+			l >>= 1;
+			r >>= 1;
 		}
-		return res;
+		return res.val;
 	}
 	private:
 	int n;
@@ -46,21 +48,11 @@ template < typename T > class Segment_Tree
 	{
 		return Node(a.val + b.val);
 	}
-	void build(const vector < T > &a)
-	{
-		for (int i = 1; i < sz(a); i++)
-		{
-			tree[i + n] = Node(a[i]);
-		}
-		for (int i = n - 1; i >= 1; i--)
-		{
-			tree[i] = merge(tree[i * 2], tree[(i * 2) | 1]);
-		}
-	}
+
 };
 
 
-void Solve()
+void solve()
 {
 
 }
@@ -72,7 +64,7 @@ signed main()
 	int t = 1;
 	//cin >> t;
 	for (int tc = 1; tc <= t; tc++) {
-		Solve();
+		solve();
 	}
 	return 0;
 }
