@@ -64,15 +64,6 @@
 - [Monotonic Queue](Others/Monotonic_Queue.cpp)
 - [Coordinate Compression](Others/Coordinate_Compression.cpp)
 
-## References and Resources used :books:
-
-- [CP Algorithms](https://cp-algorithms.com/)
-- [GeeksforGeeks](https//geeksforgeeks.org/)
-- [USACO Guide](https://usaco.guide/)
-- [Arabic Competitive Programming](https://www.youtube.com/@ArabicCompetitiveProgramming)
-- [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
-- [Competitive Programming 4](https://cpbook.net/)
-
 ## Contributing :construction_worker:
 
 - Feel free to contribute to this repository by adding new algorithms, improving the existing ones, or fixing any issues.

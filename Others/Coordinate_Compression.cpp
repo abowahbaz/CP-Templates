@@ -5,7 +5,7 @@ using ll = long long;
 #define all(st) st.begin(), st.end()
 
 template<class T>
-vector <int> compress(const vector<T> arr) // compress [int,long long,string] to [1,n]
+vector <int> compress(const vector<T> arr) // compress [int,long long,string] to [1,n] values
 {
     vector<T> temp = arr;
     sort(temp.begin(), temp.end());

@@ -4,7 +4,6 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-
 struct Edge
 {
     int id, u, v; ll w; // [edge_index,to,from,cost]
@@ -43,7 +42,7 @@ struct MST
         }
     }
     public:
-    MST(int n, vector<Edge> &edges) : n(n), edges(edges)
+    MST(int n, const vector<Edge> &edges) : n(n), edges(edges)
     {
         parent.resize(n + 1);
         rank.resize(n + 1);
@@ -65,20 +64,17 @@ struct MST
 };
 
 
-void Solve()
-{
-
-}
+void solve() {}
 
 signed main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
+#if LOCAL
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    ios_base::sync_with_stdio(0), cin.tie(0);
+    int t = 1;  //cin >> t; 
+    while (t--)
+        solve();
     return 0;
 }
