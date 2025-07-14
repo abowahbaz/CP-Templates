@@ -1,100 +1,98 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
+#define ll long long
+#define sz(st) (int)st.size()
 #define all(st) st.begin(), st.end()
 
 class Trie
 {
     private:
-    constexpr static int S = 26, base = 'a'; // TODO
+    char base;
     struct Node
     {
-        Node *child[S];
-        bool isEnd;
-        Node()
-        {
-            for (int i = 0; i < S; i++)
-                child[i] = nullptr;
-            isEnd = false;
+        Node *ch[26];
+        int prefix, word;
+        Node() {
+            prefix = word = 0;
+            memset(ch, 0, sizeof(ch));
         }
     };
-    // Some helper functions
-    int get(char c) { return c - base; }
-    bool check(Node *cur, int idx) { return !cur->child[idx]; }
-
+    inline int get_idx(char c) { return (c - base); }
     Node *root;
+
+    void release(Node *ptr)
+    {
+        if (ptr == nullptr) return;
+        for (int i = 0; i < 26; i++)
+            release(ptr->ch[i]);
+        delete ptr;
+    }
     public:
-    Trie()
-    {
-        root = new Node();
-    }
-    void insert(string s)
+    Trie(char _base = 'a') :base(_base) { root = new Node; }
+    ~Trie() { release(root); }
+    void insert(const string s)
     {
         Node *cur = root;
         for (char c : s)
         {
-            int idx = get(c);
-            if (check(cur, idx))
-                cur->child[idx] = new Node();
-            cur = cur->child[idx];
+            int idx = get_idx(c);
+            if (cur->ch[idx] == nullptr)
+                cur->ch[idx] = new Node;
+            cur = cur->ch[idx];
+            cur->prefix++;
         }
-        cur->isEnd = true;
+        cur->word++;
     }
-    bool search(string s)
+    bool find(const string s)
     {
         Node *cur = root;
         for (char c : s)
         {
-            int idx = get(c);
-            if (check(cur, idx))
-                return false;
-            cur = cur->child[idx];
+            int idx = get_idx(c);
+            if (cur->ch[idx] == nullptr)
+                return 0;
+            cur = cur->ch[idx];
         }
-        return cur->isEnd;
+        return (cur->word > 0);
     }
-    bool isPrefix(string s)
+    void erase(const string s)
     {
+        if (!find(s)) return;
         Node *cur = root;
-        for (char c : s)
-        {
-            int idx = get(c);
-            if (check(cur, idx))
-                return false;
-            cur = cur->child[idx];
+        vector<Node *> path = { root };
+        for (char c : s) {
+            int idx = get_idx(c);
+            cur = cur->ch[idx];
+            cur->prefix--;
+            path.push_back(cur);
         }
-        return true;
-    }
-    void erase(string s)
-    {
-        if (!search(s))
-            return;
-        Node *cur = root;
-        for (char c : s)
-        {
-            int idx = get(c);
-            if (check(cur, idx))
-                return;
-            cur = cur->child[idx];
+        cur->word--;
+        for (int i = sz(s); i > 0; --i) {
+            Node *node = path[i];
+            if (node->prefix == 0 && node->word == 0) {
+                int idx = get_idx(s[i - 1]);
+                path[i - 1]->ch[idx] = nullptr;
+                release(node);
+                break;
+            }
         }
-        cur->isEnd = false;
     }
 };
 
-void Solve()
+void solve()
 {
 
 }
 
 signed main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
+#if LOCAL
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    ios_base::sync_with_stdio(0), cin.tie(0);
+    int t = 1; //cin>>t;
+    while (t--)
+        solve();
     return 0;
 }
