@@ -1,70 +1,79 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+#define ll long long
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-template < typename T > class SegTree
+struct Node
 {
-	public:
-	struct Node
+	ll val;
+	Node(ll v = 0) : val(v) {}
+};
+
+template <typename T>
+class SegTree // 1-based
+{
+	private:
+	int tree_size;
+	vector<Node> seg; // 1-based
+	Node merge(const Node &a, const Node &b)
 	{
-		T val;
-		Node(T v = 0) : val(v) {}
-	};
-	SegTree(int N) { init(N); }
-	SegTree(const vector < T > &a) { init(a.size()); Build(a); }
-	void update(int idx, T val)
-	{
-		idx += n;
-		tree[idx].val = val;
-		for (idx /= 2; idx >= 1; idx /= 2)
-		{
-			tree[idx] = merge(tree[idx * 2], tree[(idx * 2) | 1]);
-		}
+		return a.val + b.val; // TODO
 	}
-	T query(int l, int r)
+	void init(int n)
 	{
+		tree_size = 1;
+		while (tree_size < n) tree_size <<= 1;
+		seg.resize(tree_size << 1);
+	}
+	void build(const vector<T> &a) // 1-based array
+	{
+		int n = sz(a) - 1;
+		for (int i = 1;i <= n;i++)
+			seg[tree_size + i].val = a[i];
+		for (int i = tree_size - 1;i >= 1;i--)
+			seg[i] = merge(seg[2 * i], seg[2 * i + 1]);
+	}
+
+	public:
+	SegTree(int n) { init(n); }
+	SegTree(const vector<T> &a) { // 1-based array
+		int n = sz(a) - 1;
+		init(n), build(a);
+	}
+	void update(int idx, T val) {
+		idx += tree_size;
+		seg[idx].val = val;
+		for (idx >>= 1;idx >= 1;idx >>= 1)
+			seg[idx] = merge(seg[2 * idx], seg[2 * idx + 1]);
+
+	}
+	T query(int l, int r) {
 		Node res;
+		l += tree_size, r += tree_size;
 		while (l <= r)
 		{
-			if (l & 1) res = merge(res, tree[l++]);
-			if (!(r & 1)) res = merge(res, tree[r--]);
-			l >>= 1;
-			r >>= 1;
+			if (l & 1) res = merge(res, seg[l++]);
+			if (!(r & 1)) res = merge(res, seg[r--]);
+			l >>= 1, r >>= 1;
 		}
 		return res.val;
 	}
-	private:
-	int n;
-	vector < Node > tree;
-	void init(int N)
-	{
-		n = 1;
-		while (n < N) n <<= 1;
-		tree.resize((2 * n) + 1);
-	}
-	Node merge(const Node &a, const Node &b)
-	{
-		return Node(a.val + b.val);
-	}
-
 };
-
 
 void solve()
 {
-
 }
 
 signed main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int t = 1;
-	//cin >> t;
-	for (int tc = 1; tc <= t; tc++) {
+#if LOCAL
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
+	ios_base::sync_with_stdio(0), cin.tie(0);
+	int t = 1; // cin>>t;
+	while (t--)
 		solve();
-	}
 	return 0;
 }
