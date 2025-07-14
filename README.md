@@ -3,49 +3,56 @@
 - This repository contains my implementations of various algorithms and data structures in C++ through my competitive programming journey. I have tried to keep the code as clean and readable as possible.
 
 - Every code has some TODOs for problem specific implementation (advisably use [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) ), make sure to read them before using the code.
-
-- This repository is not meant to be a replacement for learning the concepts from scratch. It is recommended to understand the concepts first and then refer to the code for implementation.
-- It's also recommended when practicing problems to implement the algorithms from scratch to get a better understanding of the concepts and to cope with the time constraints like in contests.
+- The codebase is organized into different categories for easy navigation.
+- Constantly updated with new algorithms and data structures as I learn them.
 
 ## Table of Contents :bookmark_tabs:
 
-### Math and Geometry :triangular_ruler:
+### Math and Number Theory :brain: 
 
 - [Exponentation / Modular Multiplicative Inverse ](Math/Exponentiation.cpp)
 - [Sieve / Factorizations](Math/Sieve.cpp)
 - [Euler's Phi Function](Math/Phi.cpp)
 - [Extended Euclidean Algorithm / LDE](Math/Extended_Euclidean.cpp)
-- [Combinatorial Library](Math/Combinatorics.cpp)
-- [Geometry Library](Math/Geometry.cpp)
+- [Combinatorics Library](Math/Combinatorics.cpp)
+- [Gaussian Elimination](Math/Gaussian_Elimination.cpp)
+- [FFT](Math/FFT.cpp)
+- [NTT](Math/NTT.cpp)
+- [FFT with Modulo](Math/FFT_MOD.cpp)
+
+---
+
+### Geometry :triangular_ruler:
+- [Geometry Library](Geometry/Geometry.cpp)
+- [Convex Hull](Geometry/Convex_Hull.cpp)
 
 ---
 
 ### Range Queries :mag_right:
 
+- [Square Root Decomposition](Range%20Queries/Sqrt_Decomposition.cpp)
+- [Mo's Algorithm](Range%20Queries/MO_Algorithm.cpp)
 - [Sparse Table](Range%20Queries/Sparse_Table.cpp)
 - [Iterative Segment Tree](Range%20Queries/Iterative_Seg_Tree.cpp)
 - [Recursive Segment Tree](Range%20Queries/Seg_Tree.cpp)
 - [Lazy Propagation](Range%20Queries/Lazy_Seg_Tree.cpp)
 - [Fenwick Tree](Range%20Queries/Fenwick%20Tree.cpp)
-- [Mo's Algorithm](Range%20Queries/MO_Algorithm.cpp)
-- [Square Root Decomposition](Range%20Queries/Sqrt_Decomposition.cpp)
 - [Merge Sort Tree](Range%20Queries/Merge_Sort.cpp)
 
 ---
 
 ### Trees :deciduous_tree:
 
-- [Binary Lifting](Trees/LCA.cpp)
-- [Heavy Light Decomposition](Trees/HLD.cpp)
 - [Kruskal's MST](Trees/Kruskal_MST.cpp)
+- [Heavy Light Decomposition](Trees/HLD.cpp)
 - [Eulerian Path Method -- LCA in O(1)](Trees/Euler_LCA.cpp)
+- [Binary Lifting](Trees/LCA.cpp)
 
 ---
 
 ### Graphs :chart_with_upwards_trend:
 
-- [Disjoint Set Union (DSU)](Graphs/DSU.cpp)
-- [Dijkstra's Algorithm](Graphs/Dijkstra's%20Algorithm.cpp)
+- [DSU with rollback trick](Graphs/DSU_Rollback.cpp)
 - [Bellman Ford Algorithm](Graphs/Bellman%20Ford%20Algorithm.cpp)
 - [Floyd Warshall Algorithm](Graphs/Floyd.cpp)
 - [Topological Sort](Graphs/Topological%20Sort.cpp)
@@ -53,7 +60,7 @@
 
 ---
 
-### Strings :abc: (currently studying:sweat_smile:)
+### Strings :abc: (soon:sweat_smile:)
 
 - [Trie](Strings/Trie.cpp)
 
