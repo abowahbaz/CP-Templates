@@ -23,6 +23,7 @@ struct Floyd
                     dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
     }
     ll get(int u, int v) { return (dist[u][v] == 1e18 ? -1 : dist[u][v]); }
+    // minimax / maximin can be precomputed for all pairs in O(n^3)
     ll minimax(int u, int v)
     {
         ll ans = 1e18;
