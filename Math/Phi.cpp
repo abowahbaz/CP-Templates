@@ -21,9 +21,9 @@ ll phi(ll n)
     return result;
 }
 
-vector < ll > phi_sieve(int MAX)
+vector <ll> phi_sieve(int MAX)
 {
-    vector < ll > phi(MAX + 1);
+    vector <ll> phi(MAX + 1);
     iota(all(phi), 0);
     for (int i = 2; i <= MAX; i++) {
         if (phi[i] == i) {

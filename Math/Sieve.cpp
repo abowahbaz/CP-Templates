@@ -4,9 +4,9 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-vector < bool > sieve(int MAXN)
+vector <bool> sieve(int MAXN)
 {
-    vector < bool > is_prime(MAXN + 1, true);
+    vector <bool> is_prime(MAXN + 1, true);
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i * i <= MAXN; i++) {
         if (is_prime[i]) {
@@ -18,9 +18,9 @@ vector < bool > sieve(int MAXN)
     return is_prime;
 }
 
-vector < int > spf(int MAXN) // smallest prime factor
+vector <int> spf(int MAXN) // smallest prime factor
 {
-    vector < int > spf(MAXN + 1);
+    vector <int> spf(MAXN + 1);
     for (int i = 1; i <= MAXN; i++) {
         spf[i] = i;
     }
@@ -36,9 +36,9 @@ vector < int > spf(int MAXN) // smallest prime factor
     return spf;
 }
 
-vector < ll > prime_factors(ll n)
+vector <ll> prime_factors(ll n)
 {
-    vector < ll > factors;
+    vector <ll> factors;
     for (ll i = 2; i * i <= n; i++) {
         int cnt = 0;
         while (n % i == 0) {
@@ -53,9 +53,9 @@ vector < ll > prime_factors(ll n)
     return factors;
 }
 
-vector < ll > factorize(ll n)
+vector <ll> factorize(ll n)
 {
-    vector < ll > factors;
+    vector <ll> factors;
     for (ll i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             factors.push_back(i);
