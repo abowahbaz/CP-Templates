@@ -7,7 +7,8 @@ using ll = long long;
 class DSU
 {
 	private:
-	vector < int > parent, gsize;
+	vector <int> parent, gsize;
+	stack<pair<int, int>>stk;
 	int sets;
 	public:
 	DSU(int n) : sets(n)
@@ -23,13 +24,29 @@ class DSU
 	void join(int u, int v)
 	{
 		u = find(u), v = find(v);
-		if (u == v) return;
+		if (u == v) {
+			stk.push({ -1,-1 });
+			return;
+		}
 		if (gsize[u] < gsize[v]) swap(u, v);
 		parent[v] = u;
 		gsize[u] += gsize[v];
+		stk.push({ u,v });
 		sets--;
 	}
+	void rollback(int k) {
+
+		while (k-- && !stk.empty())
+		{
+			auto [u, v] = stk.top(); stk.pop();
+			if (u == -1) continue;
+			parent[v] = v;
+			gsize[u] -= gsize[v];
+			sets++;
+		}
+	}
 	int get_sets() { return sets; }
+	int get_size(int u) { return gsize[find(u)]; }
 	bool same(int u, int v) { return find(u) == find(v); }
 };
 
