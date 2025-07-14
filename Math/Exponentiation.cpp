@@ -46,7 +46,7 @@ vector<int>apply_permutation(vector<int> &a, vector<int> &p)
     return res;
 }
 
-vector<int>permute_k_times(vector<int> &a, vector<int> &p, int k)
+vector<int>permute_k_times(vector<int> &a, vector<int> &p, ll k)
 {
     while (k > 0)
     {
