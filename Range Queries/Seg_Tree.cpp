@@ -50,8 +50,9 @@ class SegTree // 1-based
             tree_size <<= 1;
         seg.resize(tree_size << 1);
     }
-    void build(int t, int tl, int tr, const vector<T> &a)
+    void build(int t, int tl, int tr, const vector<T> &arr)
     {
+        if (tl >= arr.size()) return;
         if (tl == tr)
         {
             seg[t] = a[tl];

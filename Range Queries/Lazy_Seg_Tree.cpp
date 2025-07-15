@@ -34,6 +34,7 @@ class LazySegTree {
 
     void build(int t, int tl, int tr, const vector<T> &arr)
     {
+        if (tl >= arr.size()) return;
         if (tl == tr)
         {
             seg[t] = Node(arr[tl]);
