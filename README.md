@@ -66,7 +66,8 @@
 ### Strings :abc: (soon:sweat_smile:)
 
 - [Trie](Strings/Trie.cpp)
-
+- [Binary Trie](Strings/BinaryTrie.cpp)
+  
 ---
 
 ## Others :bulb:
