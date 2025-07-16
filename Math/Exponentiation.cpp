@@ -35,7 +35,7 @@ ll mod_inv(ll x, ll mod)
     return pow_mod(x, mod - 2, mod);
 }
 
-vector<int>apply_permutation(vector<int> &a, vector<int> &p)
+vector<int>apply_permutation(vector<int> a, vector<int> p)
 {
     int n = sz(a);
     vector<int>res(n);
@@ -46,7 +46,7 @@ vector<int>apply_permutation(vector<int> &a, vector<int> &p)
     return res;
 }
 
-vector<int>permute_k_times(vector<int> &a, vector<int> &p, ll k)
+vector<int>permute_k_times(vector<int> a, vector<int> p, ll k)
 {
     while (k > 0)
     {

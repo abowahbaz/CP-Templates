@@ -17,17 +17,6 @@ ll extended_gcd(ll a, ll b, ll &x, ll &y)
     y = x1 - y1 * (a / b);
     return d;
 }
-ll linear_diophantine(ll a, ll b, ll c, ll &x, ll &y)
-{
-    ll x0, y0;
-    ll d = extended_gcd(a, b, x0, y0);
-    if (c % d != 0) {
-        return -1;
-    }
-    x = x0 * (c / d);
-    y = y0 * (c / d);
-    return d;
-}
 
 void Solve()
 {

@@ -8,13 +8,15 @@
 
 ## Table of Contents :bookmark_tabs:
 
-### Math and Number Theory :brain: 
+### Math and Number Theory :brain:
 
-- [Exponentation / Modular Multiplicative Inverse ](Math/Exponentiation.cpp)
+- [Combinatorics Library](Math/Combinatorics.cpp)
+- [Exponentation / Modular Multiplicative Inverse](Math/Exponentiation.cpp)
 - [Sieve / Factorizations](Math/Sieve.cpp)
 - [Euler's Phi Function](Math/Phi.cpp)
-- [Extended Euclidean Algorithm / LDE](Math/Extended_Euclidean.cpp)
-- [Combinatorics Library](Math/Combinatorics.cpp)
+- [Extended Euclidean Algorithm](Math/Extended_Euclidean.cpp)
+- [Linear Diophantine With Two Variables](Math/LDE_2.cpp)
+- [Count Solutions to a Basic Linear Equation](Math/LECnt.cpp)
 - [Gaussian Elimination](Math/Gaussian_Elimination.cpp)
 - [FFT](Math/FFT.cpp)
 - [NTT](Math/NTT.cpp)
@@ -23,6 +25,7 @@
 ---
 
 ### Geometry :triangular_ruler:
+
 - [Geometry Library](Geometry/Geometry.cpp)
 - [Convex Hull](Geometry/Convex_Hull.cpp)
 

@@ -4,13 +4,13 @@ using ll = long long;
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 
-struct Combinatorics
+struct CountLib
 {
     private:
     const int MOD = 1e9 + 7;
     vector<ll> fact, inv_fact, inv;
     public:
-    Combinatorics(int n, int mod = 1e9 + 7) :MOD(mod)
+    CountLib(int n, int mod = 1e9 + 7) :MOD(mod)
     {
         fact = inv_fact = inv = vector < ll > (n+1);
         fact[0] = 1;
