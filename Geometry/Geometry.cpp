@@ -29,12 +29,12 @@ namespace geo_lib
 	double length(pt a) { return abs(a); }
 
 	// counter clockwise test (ccw) peace sign
-	// + if c is on the left of BA , - for the right , 0 if collinear	
+	// + if c is on the left of BA , - for the right , 0 if collinear
 	T ccw(pt a, pt b, pt c) { return cross(b - a, c - a); }
 
 	pt rotate_by(pt a, double theta) { return a * polar(1.0, theta); }
 	pt rotate_around(pt a, pt b, double theta) { return (a - b) * polar(1.0, theta) + b; }
-	pt perp(pt p) { return pt(-p.Y, p.X); }
+	pt perp(pt p) { return { -p.Y, p.X }; }
 	pt translate(pt a, pt b) { return a + b; }
 	// scale vector p , with factor around center
 	pt scale_around(pt center, double factor, pt p) { return center + (p - center) * factor; }
@@ -67,7 +67,7 @@ namespace geo_lib
 		// From direction vector v and offset c : cross(v,p) = c
 		line(pt v, T c) : v(v), c(c) {}
 		// From equation ax+by=cf
-		line(T a, T b, T c) : v({ b, -a }), c(c) {}
+		line(T a, T b, T c) : v(pt{ b, -a }), c(c) {}
 		// From points p and q
 		line(pt p, pt q) : v(q - p), c(cross(q - p, p)) {}
 		// which side the point is at : 0 on line , -ve right , +ve left
@@ -197,7 +197,7 @@ namespace geo_lib
 	double radius_circumcircle(pt a, pt b, pt c) {
 		return radius_circumcircle(dist(a, b), dist(b, c), dist(c, a));
 	}
-	// given 2 points on the circle (p1 and p2) and radius r of some intersecting circle 
+	// given 2 points on the circle (p1 and p2) and radius r of some intersecting circle
 	// determine the location of the centers(c1 and c2)
 	bool circle_points_radius_center(pt p1, pt p2, double r, pt &ret) {
 		double d2 = sq(p1 - p2);
@@ -214,7 +214,7 @@ namespace geo_lib
 	// * ------------------------- Polygons -------------------------
 	bool is_convex(const vector<pt> &p) {
 		if (p.size() < 3) return false;
-		int n = p.size(), sign = 0;
+		int n = (int)p.size(), sign = 0;
 		for (int i = 0; i < n; ++i) {
 			double cross_val = ccw(p[i], p[(i + 1) % n], p[(i + 2) % n]);
 			if (fabs(cross_val) < EPS) continue;
@@ -225,15 +225,15 @@ namespace geo_lib
 		return true;
 	}
 
-	// check if point a is (strictly) inside the polygon P , 
-	bool in_polygon(const vector<pt> &p, pt a, bool strict = 1) {
+	// check if point a is (strictly) inside the polygon P
+	bool in_polygon(const vector<pt> &p, pt a, bool strict = true) {
 		auto above = [](pt p, pt q) { return p.Y >= q.Y - EPS; };
 		// check if [PQ] crosses ray from A
 		auto ray_cut = [above](pt a, pt p, pt q) {
 			return (above(a, q) - above(a, p)) * ccw(a, p, q) > EPS;
 			};
-		bool flag = 0;
-		for (int i = 0, n = p.size(); i < n; ++i) {
+		bool flag = false;
+		for (int i = 0, n = (int)p.size(); i < n; ++i) {
 			if (on_segment(p[i], p[(i + 1) % n], a)) return !strict;
 			flag ^= ray_cut(a, p[i], p[(i + 1) % n]);
 		}
@@ -245,7 +245,7 @@ namespace geo_lib
 		double u = fabs(a * p.X + b * p.Y + c);
 		double v = fabs(a * q.X + b * q.Y + c);
 		if (fabs(u + v) < EPS) return p; // fallback if degenerate
-		return pt((p.X * v + q.X * u) / (u + v), (p.Y * v + q.Y * u) / (u + v));
+		return { (p.X * v + q.X * u) / (u + v), (p.Y * v + q.Y * u) / (u + v) };
 	}
 	// cuts polygon Q along the line formed by point A->point B (order matters)
 	// (note: the last point must be the same as the first point)
