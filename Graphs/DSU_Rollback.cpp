@@ -1,19 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 class DSU
 {
 	private:
-	vector <int> parent, gsize;
+	vector<int> parent, gsize;
 	stack<pair<int, int>>stk;
 	int sets;
 	public:
 	DSU(int n) : sets(n)
 	{
-		parent = gsize = vector < int >(n + 1, 1);
+		parent = gsize = vector<int>(n + 1, 1);
 		for (int i = 1; i <= n; i++)
 			parent[i] = i;
 	}
@@ -49,21 +47,3 @@ class DSU
 	int get_size(int u) { return gsize[find(u)]; }
 	bool same(int u, int v) { return find(u) == find(v); }
 };
-
-
-void solve()
-{
-}
-
-signed main()
-{
-	ios_base::sync_with_stdio(false);
-	cin.tie(nullptr);
-	int t = 1;
-	//cin >> t;
-	for (int tc = 1; tc <= t; tc++) {
-		solve();
-		cout << "\n";
-	}
-	return 0;
-}

@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 ll bin_pow(ll x, ll n)
 {
@@ -37,7 +35,7 @@ ll mod_inv(ll x, ll mod)
 
 vector<int>apply_permutation(vector<int> a, vector<int> p)
 {
-    int n = sz(a);
+    int n = (int)a.size();
     vector<int>res(n);
     for (int i = 0; i < n; i++)
     {
@@ -56,23 +54,4 @@ vector<int>permute_k_times(vector<int> a, vector<int> p, ll k)
         k >>= 1;
     }
     return a;
-}
-
-
-void Solve()
-{
-
-}
-
-signed main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
 }

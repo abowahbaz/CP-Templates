@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) (int)st.size()
-#define all(st) st.begin(), st.end()
 
 class BinaryTrie {
     const int LOG = 30;

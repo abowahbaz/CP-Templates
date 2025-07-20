@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) (int)st.size()
-#define all(st) st.begin(), st.end()
 const double EPS = 1E-9;
 typedef complex<double> pt;
 #define X real()
@@ -16,7 +14,7 @@ struct CH {
 
     public:
     vector<pt> hull_points(vector<pt> &pts) {
-        int n = sz(pts);
+        int n = (int)pts.size();
         if (n <= 1) return pts;
         sort(pts.begin(), pts.end(), [](const pt &a, const pt &b) {
             if (a.X != b.X) return a.X < b.X;
@@ -27,7 +25,7 @@ struct CH {
                 return fabs(a.X - b.X) < EPS && fabs(a.Y - b.Y) < EPS;
             }),
             pts.end());
-        int n2 = sz(pts);
+        int n2 = (int)pts.size();
         if (n2 <= 1) return pts;
 
         vector<pt> h(2 * n2);
@@ -53,24 +51,3 @@ struct CH {
         return h;
     }
 };
-
-
-
-void solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1;
-    //cin >> t;
-    while (t--)
-        solve();
-    return 0;
-}

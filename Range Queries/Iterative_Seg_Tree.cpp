@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
 
 struct Node
 {
@@ -28,7 +26,7 @@ class SegTree // 1-based
 	}
 	void build(const vector<T> &a) // 1-based array
 	{
-		int n = sz(a) - 1;
+		int n = (int)a.size() - 1;
 		for (int i = 1;i <= n;i++)
 			seg[tree_size + i].val = a[i];
 		for (int i = tree_size - 1;i >= 1;i--)
@@ -38,7 +36,7 @@ class SegTree // 1-based
 	public:
 	SegTree(int n) { init(n); }
 	SegTree(const vector<T> &a) { // 1-based array
-		int n = sz(a) - 1;
+		int n = (int)a.size() - 1;
 		init(n), build(a);
 	}
 	void update(int idx, T val) {
@@ -60,20 +58,3 @@ class SegTree // 1-based
 		return res.val;
 	}
 };
-
-void solve()
-{
-}
-
-signed main()
-{
-#if LOCAL
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-#endif
-	ios_base::sync_with_stdio(0), cin.tie(0);
-	int t = 1; // cin>>t;
-	while (t--)
-		solve();
-	return 0;
-}

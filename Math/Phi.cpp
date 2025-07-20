@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 ll phi(ll n)
 {
@@ -24,7 +22,7 @@ ll phi(ll n)
 vector <ll> phi_sieve(int MAX)
 {
     vector <ll> phi(MAX + 1);
-    iota(all(phi), 0);
+    iota(phi.begin(), phi.end(), 0);
     for (int i = 2; i <= MAX; i++) {
         if (phi[i] == i) {
             for (int j = i; j <= MAX; j += i) {
@@ -33,27 +31,4 @@ vector <ll> phi_sieve(int MAX)
         }
     }
     return phi;
-}
-
-
-void Solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
 }

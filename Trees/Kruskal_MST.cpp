@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 struct Edge
 {
@@ -46,9 +44,10 @@ struct MST
     {
         parent.resize(n + 1);
         rank.resize(n + 1);
-        iota(all(parent), 0);
-        sort(all(edges));
+        iota(parent.begin(), parent.end(), 0);
+        sort(edges.begin(), edges.end());
     }
+    // returns the cost of the MST and the edges used
     pair<ll, vector<int>> process()
     {
         ll cost = 0;
@@ -62,19 +61,3 @@ struct MST
         return { cost, mst_edges };
     }
 };
-
-
-void solve() {}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1;  //cin >> t; 
-    while (t--)
-        solve();
-    return 0;
-}

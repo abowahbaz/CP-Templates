@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) (int)st.size()
-#define all(st) st.begin(), st.end()
 
 ll extended_euclid(ll a, ll b, ll &x, ll &y)
 {
@@ -41,23 +39,4 @@ ll congurence_system(vector<ll> &rems, vector<ll> &mods)
         rem = (rem % mod + mod) % mod;
     }
     return rem;
-}
-
-
-void solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1; //cin>>t;
-    while (t--)
-        solve();
-    return 0;
 }

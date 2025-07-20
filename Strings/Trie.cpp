@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) (int)st.size()
-#define all(st) st.begin(), st.end()
 
 class Trie
 {
@@ -67,7 +65,7 @@ class Trie
             path.push_back(cur);
         }
         cur->word--;
-        for (int i = sz(s); i > 0; --i) {
+        for (int i = (int)s.size(); i > 0; --i) {
             Node *node = path[i];
             if (node->prefix == 0 && node->word == 0) {
                 int idx = get_idx(s[i - 1]);
@@ -78,21 +76,3 @@ class Trie
         }
     }
 };
-
-void solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1; //cin>>t;
-    while (t--)
-        solve();
-    return 0;
-}

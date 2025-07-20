@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 class HLD {
     private:
@@ -40,7 +38,7 @@ class HLD {
             swap(u, v);
     }
 
-    pair<int, int> move_up(int &u)
+    pair<int,int> move_up(int &u)
     {
         pair<int, int> ret = { pos[root[u]], pos[u] };
         u = par[root[u]];
@@ -48,7 +46,7 @@ class HLD {
     }
 
     public:
-    HLD(int n, const vector<vector<int> > &G, int treeRoot = 1) : adj(G)
+    HLD(int n, const vector<vector<int>> &G, int treeRoot = 1) : adj(G)
     {
         dep = par = root = pos = SubtreeSz = heavy = vector<int>(n + 1);
         nxt_pos = 1;
@@ -56,7 +54,7 @@ class HLD {
         build(treeRoot);
     }
 
-    vector<pair<int, int> > query_path(int u, int v)
+    vector<pair<int,int> > query_path(int u, int v)
     {
         vector<pair<int, int> > ret;
         while (root[u] != root[v]) {
@@ -82,19 +80,4 @@ class HLD {
     }
 };
 
-// TODO : some data structure for range querying
-
-void Solve() {}
-
-signed main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
-}
+// TODO : some data structure

@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 ll extended_euclid(ll a, ll b, ll &x, ll &y)
 {
@@ -24,26 +22,4 @@ ll LDE(ll a, ll b, ll c, ll &x, ll &y, ll &found)
     if (found = c % g == 0)
         x *= c / g, y *= c / g;
     return g;
-}
-
-void Solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
 }

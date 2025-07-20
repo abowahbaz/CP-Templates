@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
-#pragma GCC optimize("Ofast")
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 struct Tarjan
 {
@@ -21,7 +18,7 @@ struct Tarjan
             if (id[i] == -1)
                 dfs(i);
         }
-        reverse(all(scc));
+        reverse(scc.begin(), scc.end());
     }
     private:
     const vector<vector<int>>adj;
@@ -59,24 +56,3 @@ struct Tarjan
     }
 
 };
-
-
-void solve()
-{
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        solve(), cout << "\n";
-    }
-    return 0;
-}

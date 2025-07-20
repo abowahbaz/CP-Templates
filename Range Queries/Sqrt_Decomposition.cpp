@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 /*
  Sqrt Decomposition is more like an adhoc algorithm,
@@ -20,7 +18,7 @@ struct Sqrt_Decomposition {
     public:
     Sqrt_Decomposition(const vector<ll> &nums)
     {
-        int n = nums.size();
+        int n = (int)nums.size();
         arr.resize(n);
         blk.resize(len);
         // one-based
@@ -52,20 +50,3 @@ struct Sqrt_Decomposition {
         return ans;
     }
 };
-
-void Solve()
-{
-}
-
-signed main()
-{
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
-}

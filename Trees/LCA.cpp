@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 struct LCA
 {
@@ -26,7 +24,7 @@ struct LCA
     public:
     LCA(vector<vector<int>> &adj, int root = 1) : adj(adj)
     {
-        n = sz(adj);
+        n = (int)adj.size();
         LOG = 31 - __builtin_clz(n);
         up.assign(n + 1, vector<int>(LOG + 1));
         depth.assign(n + 1, 0);
@@ -68,22 +66,3 @@ struct LCA
     }
 
 };
-
-
-void Solve()
-{
-
-}
-
-signed main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
-}

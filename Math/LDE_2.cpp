@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define sz(st) (int)st.size()
-#define all(st) st.begin(), st.end()
 
 ll extended_euclid(ll a, ll b, ll &x, ll &y) {
     ll xx = y = 0;
@@ -71,23 +69,4 @@ ll find_all_solutions(ll a, ll b, ll c, ll minx, ll maxx, ll miny, ll maxy) {
     ll rx = min(rx1, rx2);
     if (lx > rx) return 0;
     return (rx - lx) / abs(b) + 1;
-}
-
-
-void solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1; //cin>>t;
-    while (t--)
-        solve();
-    return 0;
 }

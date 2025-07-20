@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+#define ll long long
 #define sz(st) int(st.size())
 #define all(st) st.begin(), st.end()
 //Merge Sort Tree using SQRT
@@ -39,8 +39,9 @@ class Merge_Sort_Tree {
         b[k][j] = a[idx] = val;
         sort(all(b[k]));
     }
-
-    int query(int L, int R, T x) {
+    
+    // count in range[L,R] : how many element satisfy the get() function
+    int count(int L, int R, T x) {
         int res = 0;
         while (L <= R) {
             if (L % len == 0 && L + len - 1 <= R) {
@@ -54,16 +55,3 @@ class Merge_Sort_Tree {
         return res;
     }
 };
-
-void solve()
-{
-}
-
-signed main()
-{
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1;  //cin >> t;
-    while (t--)
-        solve();
-    return 0;
-}

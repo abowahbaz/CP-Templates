@@ -1,18 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
-
+#define ll long long
 // Eulerain Path Method Of LCA
 
 struct Euler_LCA // 1 based indexing
 {
     private:
     int LOG;
-    vector < int > euler, first, depth, bin_log;
-    const vector < vector < int > > adj;
-    vector < vector < int > > dp;
+    vector <int> euler, first, depth, bin_log;
+    const vector<vector<int>> adj;
+    vector <vector<int>> dp;
 
     inline int get_min(int u, int v)
     {
@@ -32,12 +29,12 @@ struct Euler_LCA // 1 based indexing
             euler.emplace_back(u);
         }
     }
-    Euler_LCA(int n, vector < vector < int > > &g) : adj(g)
+    Euler_LCA(int n, vector<vector<int>> &g) : adj(g)
     {
-        first = depth = vector < int >(n + 1, -1);
+        first = depth = vector<int>(n + 1, -1);
         dfs(1, 0, 0);
-        LOG = sz(euler) + 1;
-        dp.resize(LOG, vector < int >(int(log2(LOG)) + 1));
+        LOG = int(euler.size()) + 1;
+        dp.resize(LOG, vector <int>(int(log2(LOG)) + 1));
 
         // Precompute Sparse Table
         for (int i = 0;i < LOG;i++)
@@ -71,21 +68,3 @@ struct Euler_LCA // 1 based indexing
         return get_min(u, v);
     }
 };
-
-
-void Solve()
-{
-}
-
-signed main()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    for (int tc = 1; tc <= t; tc++) {
-        Solve();
-        cout << "\n";
-    }
-    return 0;
-}

@@ -61,6 +61,7 @@
 - [Floyd Warshall Algorithm](Graphs/Floyd.cpp)
 - [Topological Sort](Graphs/Topological%20Sort.cpp)
 - [Tarjan's Algorithm For SCC](Graphs/TarjanSCC.cpp)
+- [Dynamic Connectiviy](Graphs/Dynamic_Connectivity.cpp)
 
 ---
 

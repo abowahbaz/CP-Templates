@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-using ll = long long;
-#define sz(st) int(st.size())
-#define all(st) st.begin(), st.end()
+#define ll long long
 
 struct NTT
 {
@@ -52,7 +50,7 @@ struct NTT
         for (int i = 0; i < n; ++i) rev[i] = (rev[i / 2] | (i & 1) << L) / 2;
 
         for (int i = 0; i < n; ++i) if (i < rev[i]) swap(a[i], a[rev[i]]);
-        
+
         for (int k = 1; k < n; k *= 2) {
             for (int i = 0; i < n; i += 2 * k) {
                 for (int j = 0; j < k; ++j) {
@@ -80,25 +78,3 @@ struct NTT
         return { out.begin(), out.begin() + s };
     }
 };
-
-
-
-
-void solve()
-{
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(false), cin.tie(nullptr);
-    int t = 1;
-    //cin >> t;
-    while (t--)
-        solve();
-    return 0;
-}

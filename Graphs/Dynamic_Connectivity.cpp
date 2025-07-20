@@ -150,39 +150,21 @@ struct DC
 };
 
 
-
-
-void solve()
-{
-	// Standard Problem Section
-    int n, q; cin >> n >> q;
-    vector<vector<int>>query;
-    for (int i = 0;i < q;i++)
-    {
-        char op; cin >> op;
-        if (op != '?')
-        {
-            int u, v; cin >> u >> v;
-            query.push_back({ op,u,v });
-        }
-        else query.push_back({ op });
-    }
-    DC dc(n, q, query);
-    dc.print_answers();
-
-
-}
-
-signed main()
-{
-#if LOCAL
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-#endif
-    ios_base::sync_with_stdio(0), cin.tie(0);
-    int t = 1;
-    //cin >> t;
-    while (t--)
-        solve();
-    return 0;
-}
+// * Standard Problem Section
+// void solve()
+// {
+//     int n, q; cin >> n >> q;
+//     vector<vector<int>>query;
+//     for (int i = 0;i < q;i++)
+//     {
+//         char op; cin >> op;
+//         if (op != '?')
+//         {
+//             int u, v; cin >> u >> v;
+//             query.push_back({ op,u,v });
+//         }
+//         else query.push_back({ op });
+//     }
+//     DC dc(n, q, query);
+//     dc.print_answers();
+// }
