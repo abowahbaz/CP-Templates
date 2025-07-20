@@ -10,7 +10,7 @@ struct CountLib
     public:
     CountLib(int n, int mod = 1e9 + 7) :MOD(mod)
     {
-        fact = inv_fact = inv = vector < ll > (n+1);
+        fact = inv_fact = inv = vector < ll >(n + 1);
         fact[0] = 1;
         for (int i = 1; i <= n; i++) {
             fact[i] = (fact[i - 1] * i) % MOD;
@@ -24,6 +24,7 @@ struct CountLib
             inv_fact[i] = (inv_fact[i - 1] * inv[i]) % MOD;
         }
     }
+    // choosing r elements from n elements (order does not matter)
     ll nCr(int n, int r)
     {
         if (r < 0 || r > n) {
@@ -31,6 +32,7 @@ struct CountLib
         }
         return (fact[n] * inv_fact[r] % MOD) * inv_fact[n - r] % MOD;
     }
+    // choosing r elements from n elements (order matters)
     ll nPr(int n, int r)
     {
         if (r < 0 || r > n) {
@@ -42,5 +44,10 @@ struct CountLib
     {
         return nCr(2 * n, n) * inv[n + 1] % MOD;
     }
-
+    // number of ways to put n indistinguishable balls into k distinguishable boxes
+    // number of ways to but k indistinguishable dividers between n indistinguishable items
+    ll stars_bars(int n, int k)
+    {
+        return nCr(n + k - 1, k - 1);
+    }
 };
