@@ -21,9 +21,14 @@
 - [Discrete Logarithm](Math/Discrete_Log.cpp)
 - [Gaussian Elimination](Math/Gaussian_Elimination.cpp)
 - [Matrix Power](Math/Matrix_Power.cpp)
-- [FFT](Math/FFT.cpp)
-- [NTT](Math/NTT.cpp)
-- [FFT with Modulo](Math/FFT_MOD.cpp)
+  
+---
+
+### Convolutions :mailbox_with_mail:
+
+- [FFT](Convolutions/FFT.cpp)
+- [NTT](Convolutions/NTT.cpp)
+- [FFT with Modulo](Convolutions/FFT_MOD.cpp)
 
 ---
 
