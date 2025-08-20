@@ -27,8 +27,8 @@
 ### Convolutions :mailbox_with_mail:
 
 - [FFT](Convolutions/FFT.cpp)
-- [NTT](Convolutions/NTT.cpp)
 - [FFT with Modulo](Convolutions/FFT_MOD.cpp)
+- [NTT](Convolutions/NTT.cpp)
 
 ---
 
