@@ -18,6 +18,7 @@
 - [Chinese Remainder Theorem](Math/CRT.cpp)
 - [Linear Diophantine With Two Variables](Math/LDE_2.cpp)
 - [Count Solutions to a Basic Linear Equation](Math/LECnt.cpp)
+- [Discrete Logarithm](Math/Discrete_Log.cpp)
 - [Gaussian Elimination](Math/Gaussian_Elimination.cpp)
 - [Matrix Power](Math/Matrix_Power.cpp)
 - [FFT](Math/FFT.cpp)
